@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Homepage</title>
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Tailwind CSS for utility classes like font-inter and rounded corners -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS to apply Inter font globally */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styling for standalone buttons */
+        .standalone-button {
+            margin: 0.5rem; /* Space around buttons */
+            padding: 0.75rem 1.5rem; /* Padding for button appearance */
+            border-radius: 0.5rem; /* More rounded corners */
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            font-weight: 600; /* Semi-bold text */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .standalone-button:hover {
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+        }
+        .standalone-button.active {
+            background-color: #0056b3; /* Darker blue for active state */
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Buttons Section -->
+    <div class="flex flex-wrap justify-center p-4 bg-white shadow-lg rounded-lg mb-5">
+        <a class="standalone-button btn btn-primary active" aria-current="page" href="{% url 'home' %}">Home</a>
+        <a class="standalone-button btn btn-primary" href="{% url 'about' %}">About</a>
+        <a class="standalone-button btn btn-primary" href="{% url 'faq' %}">FAQ</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5 p-5 bg-white shadow-lg rounded-lg text-center">
+        <h1 class="display-4 text-gray-800 mb-4">BULAGA!</h1>
+        <p class="lead text-gray-600">This is a very simple home page with standalone buttons.</p>
+    </div>
+
+    <!-- Bootstrap 5.3 JavaScript Bundle with Popper CDN -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
